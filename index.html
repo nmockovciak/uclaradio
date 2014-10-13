@@ -28,6 +28,8 @@
     <script src="js/scripts.js"></script>
     <script src="js/recent_tracks.js"></script>
     <script src="js/currently_playing.js"></script>
+    <script src="js/tabletop.js"></script>
+    <script src="js/scheduler.js"></script>
 
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -47,6 +49,7 @@
         <div class="col-sm-12"> 
           LISTEN LIVE 
         </div>
+
       </div>
 
 
@@ -55,9 +58,10 @@
       <div id="Current_info" class="row">
         <div class="col-sm-7">
               <strong>Currently On Air</strong>
-              <h2>%SHOW TITLE%</h2>
-              <h3>%DJ_NAME(S)%</h3>
-              % Show Description pulled from calender / Bio %
+              <h2 id = "SHOW_TITLE"></h2>
+              <h3 id = "DJ_NAME"></h3>
+              <p id = "BLURB" >
+              </p>
             <br />
         </div>
 
