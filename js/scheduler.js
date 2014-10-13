@@ -12,15 +12,12 @@
         // data comes through as a simple array since simpleSheet is turned on
         var show;
         var time = new Date();
-        var hr = time.getHours();
-        var min = time.getMinutes();
-        time = hr + min/60;
+        time = time.getHours() + (time.getMinutes())/60;
         for (i = 0; i < data.length; i++) {
           var start = Number(data[i].start);
           var end = Number(data[i].end);
-          if((start < time) && (time < end))
+          if((start <= time) && (time <= end))
           {
-  
             show = data[i];
             break;
           }
