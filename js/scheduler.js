@@ -24,7 +24,12 @@
         }
         document.getElementById("SHOW_TITLE").innerHTML = show.show;
         document.getElementById("DJ_NAME").innerHTML = show.dj;
+        $("#pic1").attr("src", show.image);
         document.getElementById("BLURB").innerHTML = show.description;
+
+
+        //document.getElementById("DJ_IMAGE").innerHTML = show.image;
+
         console.log(data);
         console.log("Mockup spreadsheet view: https://docs.google.com/spreadsheets/d/1WFD8lerekpe_384yXMdImHtqXH7e17z0ttiunltK7I8/pubhtml?gid=0&single=true");
 

@@ -15,6 +15,11 @@ body {
   font-family: Lato, sans-serif; /*Lato doesn't work on chrome(!) or safari */
 }
 
+#Current_info #pic1
+{
+  width: 500px;
+}
+
 .container {
   background: rgba(245,245,245,0.7);
   padding: 50px;
