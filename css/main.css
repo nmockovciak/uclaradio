@@ -10,7 +10,7 @@ body {
   background-size: cover;
 }
 
-#Current_info .side
+#Current_info
 {
   font-family: Lato, sans-serif; /*Lato doesn't work on chrome(!) or safari */
 }
