@@ -1,6 +1,6 @@
 
 body {
-  font-family: Lato, sans-serif !important;
+  font-family: Lato, sans-serif;
   font-style: italic;
   font-color: #333;
   height: 100%;
@@ -8,6 +8,11 @@ body {
   font-size: 24px;
   padding-top: 20px;
   background-size: cover;
+}
+
+#Current_info .side
+{
+  font-family: Lato, sans-serif; /*Lato doesn't work on chrome(!) or safari */
 }
 
 .container {

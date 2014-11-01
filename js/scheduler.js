@@ -10,12 +10,13 @@
 
       function showInfo(data) {
         // data comes through as a simple array since simpleSheet is turned on
-        var show;
+        var show = null;
         var time = new Date();
-        var day = time.getDay();
-        time = time.getHours() + (time.getMinutes())/60;
+        var day = time.getUTCDay(); //0 corresponds to Sunday
+        time = time.getUTCHours() - 7 + (time.getMinutes())/60;
+        console.log(time);
         for (i = 0; i < data.length; i++) {
-          if((data[i].start <= time) && (time <= data[i].end) && (data[i].day == day))
+          if((data[i].day == day) && (data[i].start <= time) && (time <= data[i].end))
           {
             show = data[i];
             break;
@@ -25,5 +26,7 @@
         document.getElementById("DJ_NAME").innerHTML = show.dj;
         document.getElementById("BLURB").innerHTML = show.description;
         console.log(data);
+        console.log("Mockup spreadsheet view: https://docs.google.com/spreadsheets/d/1WFD8lerekpe_384yXMdImHtqXH7e17z0ttiunltK7I8/pubhtml?gid=0&single=true");
+
       }
 
