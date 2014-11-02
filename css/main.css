@@ -10,14 +10,10 @@ body {
   background-size: cover;
 }
 
-#Current_info
-{
-  font-family: Lato, sans-serif; /*Lato doesn't work on chrome(!) or safari */
-}
 
 #Current_info #pic1
 {
-  width: 500px;
+  width: 100%;
 }
 
 .container {
