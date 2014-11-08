@@ -14,14 +14,12 @@
         var time = new Date();
         var day = time.getUTCDay(); //0 corresponds to Sunday
         var minutes = time.getMinutes();
-        time = time.getUTCHours() - 7;
+        time = time.getUTCHours() - 8;
         
-        if(time < 0) //saturday
+        if(time < 0)
         {
           time = 24 + time;
-          day = day -1;
-          if (day < 0)
-            day = 6;
+          day = (day == 0) ? 6 : (day-1);
         }
 
         time = time + minutes/60;
@@ -35,16 +33,25 @@
             break;
           }
         }
-        document.getElementById("SHOW_TITLE").innerHTML = show.show;
-        document.getElementById("DJ_NAME").innerHTML = show.dj;
-        if(show.image != "") $("#pic1").attr("src", show.image);
-        else
+        
+
+        if(show.image != "")
         {
-          var parent = document.getElementById("dj_image");
-          var child = document.getElementById("pic1");
-          parent.removeChild(child);
+          var img = new Image();
+          var div = document.getElementById('dj_image');
+
+          img.onload = function() {
+            div.appendChild(img);
+          };
+
+          img.src = show.image;
         }
 
+        
+        document.getElementById("SHOW_TITLE").innerHTML = show.show;
+        document.getElementById("DJ_NAME").innerHTML = show.dj;
+        
+        
         document.getElementById("BLURB").innerHTML = show.description;
 
 

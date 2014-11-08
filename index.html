@@ -34,6 +34,7 @@
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
   </head>
+
   <body>
     <div class="container" role="main">
       <img id="logo" src="img/logo.png" alt="UCLA RADIO" />
@@ -55,28 +56,26 @@
 
 
       <div id="Current_info" class="row">
-        <div class="col-sm-7">
-              <strong><mark>Currently On Air</mark></strong>
+        <div class="col-sm-7" id="current_show">
+              <h1><strong><mark>Currently On Air</mark></strong></h1>
               <b><h2 id = "SHOW_TITLE"></h2></b>
               <h3 id = "DJ_NAME"></h3>
-              <div id ="dj_image"><img id="pic1" src = "" /></div>
+              <div id ="dj_image"></div>
               <p id = "BLURB" >
               </p>
             <br />
         </div>
 
         <div id="side" class="col-sm-4">
-          <br />
-            <div id="lfmMostRecentTrack">
+              <h2><strong><mark><span id="lfmMostRecentTrackDate"></span></mark></strong></h2>
+              <div id="lfmMostRecentTrack">
                   <img id="lfmMostRecentTrackImage" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_album_medium.png"/>
-                  <b><mark><span id="lfmMostRecentTrackDate"></span></mark></b>
                   <div id="lfmMostRecentTrackTitle"></div>
                   <span id="lfmMostRecentTrackArtist"></span> 
                   <span id="lfmMostRecentTrackAlbum"></span>
-            </div>
+              </div>
 
-          <br />
-          <br />
+          <br /><br />
 
           <h2><strong><mark>Recently Played</mark></strong></h2>
             <div id="lfmRecentTracks">

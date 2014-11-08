@@ -8,5 +8,5 @@ function lfmMostRecentTrack(JSONdata) {
   document.getElementById("lfmMostRecentTrackTitle").href = oTrack.url;
   document.getElementById("lfmMostRecentTrackTitle").innerHTML = oTrack.name;
   document.getElementById("lfmMostRecentTrackAlbum").innerHTML = oTrack.album["#text"];
-  document.getElementById("lfmMostRecentTrackDate").innerHTML = (typeof oTrack.date=="undefined"?"now playing":oTrack.date["#text"]);
+  document.getElementById("lfmMostRecentTrackDate").innerHTML = (typeof oTrack.date=="undefined"?"Now Playing":oTrack.date["#text"]);
 }

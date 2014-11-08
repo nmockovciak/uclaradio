@@ -10,11 +10,16 @@ body {
   background-size: cover;
 }
 
+mark
+{
+  color: white;
+}
 
-#Current_info #pic1
+#dj_image img
 {
   width: 100%;
 }
+
 
 .container {
   background: rgba(245,245,245,0.7);

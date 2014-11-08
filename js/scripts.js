@@ -57,6 +57,7 @@ function getColorSchemeFromTime() {
 }
 function setButtons(darkColor, mediumColor, lightColor, midnight) {
   $(".pop-button").css('background-color', lightColor);
+  $("mark").css('background-color', lightColor);
 
   var boxShadowHoverCss = "1px 0px " + mediumColor + 
     ", 0px 1px " + darkColor +
