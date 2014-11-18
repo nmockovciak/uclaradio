@@ -19,14 +19,16 @@ return name.length > l ? name.substr(0,l-2) + "\u2026" : name
 }
  
 function lfmRecentTracks(JSONdata) {
- 
+
+
 try { 
  var oTracks = new Array().concat(JSONdata.recenttracks.track);
  var eDiv = document.getElementById("lfmRecentTracks");
  var sTemplate = eDiv.innerHTML;
  var sHTML = "";
- 
+
  for (var i =  typeof oTracks[0]['@attr'] == "undefined"  ? 0 : 1; i < oTracks.length; i++) {
+
  
   sHTML =  sHTML
         + sTemplate
@@ -34,9 +36,14 @@ try {
           .replace("%TITLE%",  truncateName(oTracks[i].name,            25))
           .replace("%ARTIST%", truncateName(oTracks[i].artist["#text"], 22))
           .replace("%DATE%", calculateDateAgo(new Date().getTime()/1000 - oTracks[i].date.uts)  );
+ 
+
  }  
+
 eDiv.innerHTML = sHTML;
 eDiv.style.visibility = "visible";
 } catch(e) {}
+
  
 }
+
