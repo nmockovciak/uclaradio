@@ -1,4 +1,3 @@
-
 function lfmMostRecentTrack(JSONdata) {
   var oTrack = (new Array().concat(JSONdata.recenttracks.track))[0];
   if(oTrack.image[1]["#text"] != "")
@@ -11,5 +10,8 @@ function lfmMostRecentTrack(JSONdata) {
   document.getElementById("lfmMostRecentTrackAlbum").innerHTML = oTrack.album["#text"];
   document.getElementById("lfmMostRecentTrackDate").innerHTML = (typeof oTrack.date=="undefined"?"Now Playing":oTrack.date["#text"]);
 }
+
+
+
 
 

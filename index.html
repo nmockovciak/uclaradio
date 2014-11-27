@@ -59,17 +59,11 @@
 
       </div>
 
-
       <br />
       <center>
-      <div id="c_data" class="slider">
-        <div><h3>1</h3></div>
-        <div><h3>2</h3></div>
-        <div><h3>3</h3></div>
-        <div><h3>4</h3></div>
-        <div><h3>5</h3></div>
-        <div><h3>6</h3></div>
-      </div>
+          <div id="c_data" class="slider">
+          <!--recent_tracks.js dynamically allocate recent tracks -->
+          </div>
       </center>
       <br />
 
@@ -94,17 +88,8 @@
                   <span id="lfmMostRecentTrackAlbum"></span>
               </div>
 
-          <br /><br />
+          <br />
 
-          <h2><strong><mark>Recently Played</mark></strong></h2>
-            <div id="lfmRecentTracks">
-              <div class="contain">
-                <img class="IMAGE" src="%IMAGE%" />
-                <span class="TITLE">%TITLE%</span>
-                <span class="ARTIST">by %ARTIST%</span>
-                <span class="DATE">%DATE%</span>
-              </div>
-            </div>
         </div>
       </div>
 
@@ -117,11 +102,6 @@
             UCLA Radio is an entirely student run radio station.
             We broadcast all day, every day from a secret cave
             in Ackerman Student Union.
-          </p>
-          <p>
-            We're accepting applications for Fall internships.
-            Apply <a href="http://recruiting.dailybruin.com/applications/uclaradiocom/radio-intern/" target="_blank">here</a> 
-            and let's be friends.
           </p>
         </div>
       </div>
@@ -155,7 +135,7 @@
     
 
 
-    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=10&format=json&callback=lfmRecentTracks"></script>
+    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=15&format=json&callback=lfmRecentTracks"></script>
     <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=1&format=json&callback=lfmMostRecentTrack"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
