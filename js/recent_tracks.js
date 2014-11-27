@@ -32,12 +32,18 @@ function lfmRecentTracks(JSONdata) {
 
     var oTracks = new Array().concat(JSONdata.recenttracks.track);
     console.log(oTracks);
-    for (var i =  typeof oTracks[0]['@attr'] == "undefined"  ? 0 : 1; i < oTracks.length; i++) {
+    for (var i =  typeof oTracks[0]['@attr'] == "undefined"  ? 0 : 0; i < oTracks.length; i++) {
         var div = document.getElementById('c_data');
         var pic = oTracks[i].image[1]["#text"] != "" ? oTracks[i].image[2]["#text"] : "http:\/\/cdn.last.fm\/flatness\/icons\/res\/3\/track.png";
         var track_title = truncateName(oTracks[i].name, 22);
         var artist = truncateName(oTracks[i].artist["#text"], 22);
-        var date = calculateDateAgo(new Date().getTime()/1000 - oTracks[i].date.uts);
+        var date;
+
+        if (!oTracks[i].date)
+          date = "Now Playing";
+        else
+         date = calculateDateAgo(new Date().getTime()/1000 - oTracks[i].date.uts);
+
         div.innerHTML = div.innerHTML + '<div><h3>' + '<img src="' + pic + '"</>'+ '</h3><strong>"' + track_title + '"</strong><br />' + artist + "<br />" + date + '</div>';
     }
 // try { 
