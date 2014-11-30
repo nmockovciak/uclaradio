@@ -39,7 +39,6 @@
         {
           var img = new Image();
           var div = document.getElementById('dj_image');
-
           img.onload = function() {
             div.appendChild(img);
           };
@@ -47,6 +46,8 @@
           img.src = show.image;
         }
 
+        //if(show.show = "")
+          //document.getElementById('current_info').style.display = none;
         
         document.getElementById("SHOW_TITLE").innerHTML = show.show;
         document.getElementById("DJ_NAME").innerHTML = show.dj;
@@ -56,6 +57,7 @@
 
 
         //document.getElementById("DJ_IMAGE").innerHTML = show.image;
+
 
         console.log(data);
         console.log("Mockup spreadsheet view: https://docs.google.com/spreadsheets/d/1WFD8lerekpe_384yXMdImHtqXH7e17z0ttiunltK7I8/pubhtml?gid=0&single=true");

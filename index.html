@@ -28,12 +28,10 @@
 
     <!-- Our stylesheets/scripts -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="css/recent_tracks.css">
     <script src="js/scripts.js"></script>
     <script src="js/recent_tracks.js"></script>
-    <script src="js/currently_playing.js"></script>
-    <script src="js/tabletop.js"></script>
     <script src="js/scheduler.js"></script>
+    <script src="js/tabletop.js"></script>
     <script src="js/carousel.js"></script>
 
 
@@ -44,55 +42,43 @@
   <body>
     <div class="container" role="main">
       <img id="logo" src="img/logo.png" alt="UCLA RADIO" />
-      <div id="play-button">
-        <a role="button" class="pop-button text-center" href="#">
-          <span id="play-icon" class="fa fa-play"></span>
-          <audio id="stream" preload="none">
-            <p>Your browser does not support the stream. :(</p>
-          </audio>
-        </a>
-      </div>
-      <div class="row" id="billboard">
-        <div class="col-sm-12"> 
-          LISTEN LIVE 
-        </div>
-
-      </div>
-
      
 
-      <div id="Current_info" class="row">
-        <div class="col-sm-7" id="current_show">
-              <h2><strong><mark>Currently On Air</mark></strong></h2>
-              <b><h2 id = "SHOW_TITLE"></h2></b>
-              <h3 id = "DJ_NAME"></h3>
-              <div id ="dj_image"></div>
-              <p id = "BLURB" >
-              </p>
-            <br />
-        </div>
-
-        <div id="side" class="col-sm-4">
-              <h2><strong><mark><span id="lfmMostRecentTrackDate"></span></mark></strong></h2>
-              <div id="lfmMostRecentTrack">
-                  <img id="lfmMostRecentTrackImage" src="http://cdn.last.fm/flatness/catalogue/noimage/2/default_album_medium.png"/>
-                  <div id="lfmMostRecentTrackTitle"></div>
-                  <span id="lfmMostRecentTrackArtist"></span> 
-                  <span id="lfmMostRecentTrackAlbum"></span>
-              </div>
-
-          <br />
-
+      <div class="row">
+        <div class="col-sm-12" id="billboard">
+           <div id="play-button">
+                <a role="button" class="pop-button text-center" href="#">
+                  <span id="play-icon" class="fa fa-play"></span>
+                  <audio id="stream" preload="none">
+                    <p>Your browser does not support the stream. :(</p>
+                  </audio>
+                </a>
+            </div>
+          LISTEN LIVE 
         </div>
       </div>
 
-      <br />
-
-       <center>
-          <div id="c_data" class="slider">
-          <!--recent_tracks.js dynamically allocate recent tracks -->
+      <div id = "Current_container">
+          <div class="row" id = "current_info">
+            <div class="col-sm-6">
+              <center>
+                    <div id ="dj_image"></div>
+              </center>
+            </div>
+            <div class="col-sm-6" id="blurb">
+                <h2><strong>Currently On Air</strong></h2>
+                <b><h2 id = "SHOW_TITLE"></h2></b>
+                <h3 id = "DJ_NAME"></h3>
+                <p id = "BLURB" ></p>
+            </div>
           </div>
-      </center>
+          <br />
+           <center>
+              <div id="c_data" class="slider">
+              <!--recent_tracks.js dynamically allocate recent tracks-->
+              </div>
+          </center>
+      </div>
 
       <br />
 
@@ -131,13 +117,26 @@
       </div>
     </div>
 
+    <script>
 
-    
+    $(document).ready(
+      function() {
+        $( '#Current_container' ).fadeIn( 4500);
+        $('#messages').slideDown("slow");
+      }
+    );
+
+    $(document).ready(function(){
+      if ($("#current_info").text().length < 50) {
+        $('#current_info').hide();
+      }                                           
+    });
 
 
-    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=15&format=json&callback=lfmRecentTracks"></script>
-    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=1&format=json&callback=lfmMostRecentTrack"></script>
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=10&format=json&callback=lfmRecentTracks"></script>
+    <script type="text/javascript" src="http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=uclaradio&api_key=d3e63e89b35e60885c944fe9b7341b76&limit=1&format=json&callback=lfmMostRecentTrack"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
 
 

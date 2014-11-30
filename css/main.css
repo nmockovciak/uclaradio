@@ -1,3 +1,40 @@
+#c_data img
+{
+  width: 127px;
+  height: 127px;
+}
+
+#c_data
+{
+  font-size: 18px;
+  font-style: none;
+}
+
+
+#Current_container
+{
+  display:none;
+}
+
+#current_info
+{
+  background-color:rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 15px 15px rgba(0,0,0,0.75);
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#blurb
+{
+  color: white;
+  margin-left: -15px;
+  height: 100%;
+ 
+}
+
 body {
   font-family: Lato, sans-serif;
   font-style: italic;
@@ -21,6 +58,8 @@ mark
 #dj_image img
 {
   width: 100%;
+  height: 100%;
+  margin-left: -25px;
 }
 
 
@@ -49,6 +88,7 @@ mark
   margin-right: auto;
   font-size: 120px;
   margin-bottom: 20px;
+  z-index: 10;
 }
 
 #play-button .pop-button {
@@ -71,7 +111,8 @@ mark
   text-align: center;
   font-size: 80px;
   padding-top: 0px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
+  z-index: 10;
 }
 
 #messages {
@@ -106,9 +147,14 @@ a:hover {
 
 /* small */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-  #side {
-    border: none;
+  
+  #dj_image img
+  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
   }
+
   #playlist-link {
     margin-left: 30px;
   }
@@ -175,6 +221,21 @@ a:hover {
   body {
     padding-top: 0px;
   }
+
+  #dj_image img
+  {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+  }
+
+  #blurb
+  {
+    margin-left: 0px;
+    text-align: center;
+  }
+
+
   #billboard {
     font-size: 50px;
   }
