@@ -24,12 +24,12 @@ function loadcarousel(arr) {
 
 }
 
-
-var recently_played = new Array();
-
-
+var myVar;
+function myFunction(){
+  myVar = setTimeout(
 function lfmRecentTracks(JSONdata) {
-  
+
+  try{
     var oTracks = new Array().concat(JSONdata.recenttracks.track);
     console.log(oTracks);
     for (var i =  typeof oTracks[0]['@attr'] == "undefined"  ? 0 : 0; i < oTracks.length; i++) {
@@ -54,10 +54,18 @@ function lfmRecentTracks(JSONdata) {
          date = calculateDateAgo(new Date().getTime()/1000 - oTracks[i].date.uts);
          div.innerHTML = div.innerHTML + '<div><h3>' + '<img src="' + pic + '"</>'+ '</h3><strong>"' + track_title + '"</strong><br />' + artist + "<br />" + date + '</div>';
         }
+    } catch(e) {
       
 
 
     }
+    }
+    }, 5000);
+
+function myStopFunction(){
+  clearTimeout(myVar);
+
+}
 // try { 
 //  var oTracks = new Array().concat(JSONdata.recenttracks.track);
 //  console.log(oTracks);
