@@ -165,6 +165,10 @@ mark
   z-index: 10;
 }
 
+#stream-offline {
+  text-align: center;
+}
+
 #messages {
   font-family: Merriweather, serif;
   font-style: normal;
