@@ -29,12 +29,12 @@ db.getBlurbByTimeslotAndDay = function(time, day) {
 	});
 };
 
-db.returnall = function () {
-	DjBlurbModel.find({}, function(err, djblurbs) {
-  	if (err) throw err;
-  	//console.log(djblurbs);
- 	return djblurbs;
-	});
-};
+// db.returnall = function () {
+// 	DjBlurbModel.find({}).lean().exec(function(err,djblurbs){
+// 		console.log(JSON.stringify(djblurbs));
+// 		return JSON.stringify(djblurbs);
+// 	})
+
+// };
 
 module.exports = db;

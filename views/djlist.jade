@@ -2,5 +2,6 @@ html
 	head
 		|Listing of all djs
 	body
-	p.
-		#{djlist}
+		ul
+			each dj in djlist
+				li= dj["link"]
