@@ -1,4 +1,4 @@
-// given the time of day, returns a random color scheme 
+// given the time of day, returns a random color scheme
 // matching it.
 function getRandColorScheme(timeOfDay) {
   var possColors, choice;
@@ -10,13 +10,13 @@ function getRandColorScheme(timeOfDay) {
       }
     case 'morning': // oranges, yellows, reds, greens
       {
-        possColors = ['Reds', 'Oranges', 'YlOrBr', 'YlOrRd', 'OrRd', 
+        possColors = ['Reds', 'Oranges', 'YlOrBr', 'YlOrRd', 'OrRd',
                    'PuRd', 'RdPu'];
         break;
       }
     case 'noon': // greens, purples, blues, yellows
       {
-        possColors = ['Greens', 'BrBG', 'PuOr', 
+        possColors = ['Greens', 'BrBG', 'PuOr',
                    'Spectral', 'YlGn'];
         break;
       }
@@ -34,14 +34,14 @@ function getRandColorScheme(timeOfDay) {
 function getColorSchemeFromTime() {
   var hour = new Date().getUTCHours();
 
-  // UCLA is located 7 hours behind UTC. Use UTC time so our 
+  // UCLA is located 7 hours behind UTC. Use UTC time so our
   // background colors will be synchronized wherever you are in the world.
   var timeOfDay = null;
 
   // Nighttime: 9pm - 6am == 21 - 6 PDT == 4 - 13 UTC
   if (hour >= 4 && hour < 13) {
     return getRandColorScheme('night');
-  } 
+  }
   // Morning: 6am - 9am == 6-9 PDT == 13-16 UTC
   else if (hour >= 13 && hour < 16) {
     return getRandColorScheme('morning');
@@ -58,7 +58,7 @@ function getColorSchemeFromTime() {
 function setButtons(darkColor, mediumColor, lightColor, midnight) {
   $(".pop-button").css('background-color', lightColor);
 
-  var boxShadowHoverCss = "1px 0px " + mediumColor + 
+  var boxShadowHoverCss = "1px 0px " + mediumColor +
     ", 0px 1px " + darkColor +
     ", 2px 1px " + mediumColor +
     ", 1px 2px " + darkColor +
@@ -68,7 +68,7 @@ function setButtons(darkColor, mediumColor, lightColor, midnight) {
     ", 3px 4px " + darkColor;
   //console.log(boxShadowHoverCss);
 
-  var boxShadowActiveCss = "1px 0px " + mediumColor + 
+  var boxShadowActiveCss = "1px 0px " + mediumColor +
     ", 0px 1px " + darkColor +
     ", 2px 1px " + mediumColor +
     ", 1px 2px " + darkColor;
@@ -113,7 +113,7 @@ function setPageTheme(colorScheme) {
   var medium = null;
   var light = null;
 
-  document.body.setAttribute('style', 'background-image: url(http://i.imgur.com/7vdDtPN.jpg)');
+  document.body.setAttribute('style', 'background-image: url(http://i.imgur.com/7vdDtPN.jpg); background-attachment: fixed;');
   if (colorScheme === "Greys") { // midnight space theme
     midnight = true;
     var filename = 'img/nebula' + Math.floor(Math.random()*3) + '.jpg';
@@ -128,7 +128,7 @@ function setPageTheme(colorScheme) {
     var colors = Trianglify.colorbrewer[colorScheme][9];
     var t = new Trianglify({noiseIntensity: 0.0, cellsize: 175, x_gradient: colors});
     var pattern = t.generate(4000, 3000);
-    //document.body.setAttribute('style', 'background: ' + 
+    //document.body.setAttribute('style', 'background: ' +
         //pattern.dataUrl + ' no-repeat center center fixed');
 
     dark = colors[8];
@@ -184,7 +184,7 @@ $(document).ready(function() {
   // Generate that background image!
   var colorScheme = getColorSchemeFromTime();
   //debug
-  setPageTheme(colorScheme); 
+  setPageTheme(colorScheme);
 
   checkCarouselData();
 });
