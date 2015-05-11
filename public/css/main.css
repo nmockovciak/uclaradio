@@ -21,6 +21,12 @@
 #SHOW_TITLE, #DJ_NAME {font-size: 35px !important;}
 #BLURB {font-size: 25px !important;}
 
+#pledge-drive
+{
+	background: linear-gradient(to top right, rgb(68, 144, 183), rgb(176, 70, 89));
+	color: black;
+}
+
 
 .slick-slide
 {
