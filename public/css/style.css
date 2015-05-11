@@ -76,4 +76,10 @@ h1 {
   margin-bottom: 2em;
 }
 
+@media (max-width: 1080px) {
+	#pledge-vid
+	{
+		width: 100%;
+	}
+}
 
