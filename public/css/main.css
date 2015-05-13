@@ -2,6 +2,8 @@
 {
   font-family: 'apercuregular' !important;
 }*/
+
+
 @media only screen and (max-width: 1200px){
   .nav-dj-name
   {
@@ -19,7 +21,7 @@
 
 .show-about
 {
-  font-size: 12px !important;
+  font-size: 15px !important;
 }
 
 
@@ -412,17 +414,21 @@ a:hover {
   padding: 8px 14px;
   display: inline-block; /* needed for anchors */
   position: relative;
+
 }
 .pop-button:hover {
   -webkit-transform: translate(-4px, -4px);
       -ms-transform: translate(-4px, -4px);
           transform: translate(-4px, -4px);
+
+
 }
 /* same as above */
 .pop-button:focus {
   -webkit-transform: translate(-4px, -4px);
       -ms-transform: translate(-4px, -4px);
           transform: translate(-4px, -4px);
+
 }
 
 .pop-button:active {
@@ -437,8 +443,6 @@ a:hover {
 {
   font-size: 20px;
 }
-#SHOW_TITLE, #DJ_NAME, #BLURB {font-size: 15px !important;}
-
 
 
 

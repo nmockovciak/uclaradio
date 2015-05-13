@@ -47,7 +47,7 @@ function getColorSchemeFromTime() {
 
   // Nighttime: 9pm - 6am == 21 - 6 PDT == 4 - 13 UTC
   if (hour >= 4 && hour < 13) {
-    return getRandColorScheme('morning');
+    return getRandColorScheme('night');
   } 
   // Morning: 6am - 9am == 6-9 PDT == 13-16 UTC
   else if (hour >= 13 && hour < 16) {
@@ -64,26 +64,31 @@ function getColorSchemeFromTime() {
 }
 
 function setButtons(darkColor, mediumColor, lightColor, midnight) {
-  injectStyles('.rc-active {background-color:'+ lightColor +';}');
-  injectStyles('.cbp-contentslider nav a:last-child {box-shadow: 1px 0 ' + lightColor + ';}')
+ 
 
-
-
-  $(".cbp-contentslider nav a").hover(function(){
-    $(this).css("background-color", lightColor);
-    $(this).css("color", "white");
-  }, function(){
-    $(this).css("background-color", "");
-    $(this).css("color", "black")
-  });
-  $(".pop-button").css('background-color', lightColor);
-  $(".cbp-contentslider").css("border", "4px solid" + lightColor);
-  $(".cbp-contentslider nav a").css("border-right", "4px solid" + lightColor);
-  document.getElementById('#2').style.border = "none";
-  $(".cbp-contentslider h3").css("border-bottom", "4px solid" + lightColor);
-  $("nav").css("border-top", "4px solid" + lightColor);
   injectStyles('.slick-prev:before {color: ' + lightColor + ' !important;');
   injectStyles('.slick-next:before {color: ' + lightColor + ' !important;');
+  $(".pop-button").css('background-color', lightColor);
+
+  //if($(".cbp-nav a").length != 0) {
+      injectStyles('.rc-active {background-color:'+ lightColor +';}');
+      injectStyles('.cbp-contentslider nav a:last-child {box-shadow: 1px 0 ' + lightColor + ';}');
+       $(".cbp-contentslider nav a").hover(function(){
+          $(this).css("background-color", lightColor);
+          $(this).css("color", "white");
+        }, function(){
+          $(this).css("background-color", "");
+          $(this).css("color", "black")
+        });
+        $(".cbp-contentslider").css("border", "4px solid" + lightColor);
+        $(".cbp-contentslider nav a").css("border-right", "4px solid" + lightColor);
+        document.getElementById('#2').style.border = "none";
+        $(".cbp-contentslider h3").css("border-bottom", "4px solid" + lightColor);
+        $("nav").css("border-top", "4px solid" + lightColor);
+  //}
+
+ 
+
 
 
 

@@ -22,10 +22,8 @@ router.get('/', function(req, res) {
 		time += 'pm';
 	}
 	
-	console.log(time);
-
 	db.getAllBlurbs(function(err,blurb) {
-		console.log(blurb);
+		// console.log(blurb);
 		res.render('index', {
 			blurbs: blurb
 		})
