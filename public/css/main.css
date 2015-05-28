@@ -141,6 +141,17 @@ mark
   font-size: 100px;
 }
 
+.technical-difficulties {
+  text-align: center;
+  width: 600px;
+  margin: auto;
+  font-size: 38px;
+}
+
+.row-listen-hide {
+  display: none;
+}
+
 /* set to table alignment to get the bastard vertically aligned */
 #play-button {
   float: none;
