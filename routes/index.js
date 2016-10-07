@@ -6,6 +6,7 @@ var router = express.Router();
 var shows = require('../database/shows');
 var passwords = require('../passwords');
 var requestify = require('requestify'); 
+var Twitter = require('twitter');
 var numberOfFBPosts = 7;
 var FB = "https://graph.facebook.com/uclaradio?fields=posts.limit("+numberOfFBPosts+"){full_picture,message,created_time,link}&access_token=" + passwords["FB_API_KEY"];
 
@@ -58,6 +59,22 @@ router.get('/getSocialMedia', function(req, res) {
 	    res.send(response.getBody());
 	});
 });
+
+router.get('/getTweets', function(req, res) {
+	var client = new Twitter({
+	  consumer_key: passwords["TWITTER_consumer_key"],
+	  consumer_secret: passwords["TWITTER_consumer_secret"],
+	  access_token_key: passwords["TWITTER_access_token_key"],
+	  access_token_secret: passwords["TWITTER_access_token_secret"]
+	});
+	var params = {screen_name: 'uclaradio', count: 5};
+	client.get('statuses/user_timeline', params, function(error, tweets, response) {
+	  if (!error) {
+	    console.log(tweets);
+	    res.send(tweets);
+	  }
+	});
+})
 
 router.get('/pledgedrive', function(req, res, next) {
 	res.render('pledgedrive');

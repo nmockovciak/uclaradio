@@ -42,6 +42,7 @@
     "spdy": "^3.3.2",
     "style-loader": "^0.13.0",
     "trianglify": "^1.0.1",
+    "twitter": "^1.4.0",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
   },
